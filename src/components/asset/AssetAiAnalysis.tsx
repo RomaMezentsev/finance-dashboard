@@ -77,13 +77,13 @@ export function AssetAiAnalysis({ ticker, autoLoad = true }: AssetAiAnalysisProp
     setIsRateLimited(false);
     setHasLoaded(false);
     setCooldownUntil(0);
-  }, [ticker]);
+  }, [ticker, locale]);
 
   useEffect(() => {
     if (autoLoad && !hasLoaded && !loading) {
       void loadAnalysis(false);
     }
-  }, [autoLoad, hasLoaded, loadAnalysis, loading, ticker]);
+  }, [autoLoad, hasLoaded, loadAnalysis, loading, locale, ticker]);
 
   const summary = (analysis?.summary ?? []).filter((bullet) => bullet.trim().length > 0);
   const buttonDisabled = loading || cooldownActive;
@@ -109,6 +109,8 @@ export function AssetAiAnalysis({ ticker, autoLoad = true }: AssetAiAnalysisProp
               : t.news.analyzeNews}
         </button>
       </div>
+
+      <FinancialDisclaimer className="-mt-1" />
 
       {loading ? (
         <div className="flex min-h-32 items-center justify-center rounded-2xl border border-card-border bg-card/80 px-6 py-10">
@@ -188,8 +190,6 @@ export function AssetAiAnalysis({ ticker, autoLoad = true }: AssetAiAnalysisProp
           ) : null}
         </article>
       ) : null}
-
-      <FinancialDisclaimer className="pt-1" />
     </section>
   );
 }

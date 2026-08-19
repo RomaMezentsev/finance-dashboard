@@ -1,18 +1,21 @@
-const DISCLAIMER_TEXT =
-  "Haftungsausschluss: Die bereitgestellten Informationen und KI-Analysen dienen ausschließlich Informationszwecken und stellen keine Anlageberatung oder Kaufempfehlung dar. Keine Gewähr für die Richtigkeit der Daten.";
+"use client";
+
+import { useTranslations } from "@/lib/i18n/use-translations";
 
 type FinancialDisclaimerProps = {
   className?: string;
 };
 
 export function FinancialDisclaimer({ className = "" }: FinancialDisclaimerProps) {
+  const { t } = useTranslations();
+
   return (
     <p
       className={`text-[11px] leading-5 text-muted/75 ${className}`.trim()}
       role="note"
-      aria-label="Haftungsausschluss"
+      aria-label={t.legal.disclaimerAriaLabel}
     >
-      {DISCLAIMER_TEXT}
+      {t.legal.disclaimer}
     </p>
   );
 }

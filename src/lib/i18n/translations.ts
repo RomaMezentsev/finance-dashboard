@@ -7,6 +7,13 @@ import type {
   UpcomingEvent,
   ValuationStatus,
 } from "@/types";
+import {
+  COMMON_BY_LOCALE,
+  LEGAL_BY_LOCALE,
+  SETTINGS_BY_LOCALE,
+  type LegalTranslations,
+  type SettingsTranslations,
+} from "@/lib/i18n/settings-legal";
 
 export type Translations = {
   dashboard: {
@@ -140,6 +147,11 @@ export type Translations = {
   };
   asset: {
     back: string;
+  };
+  legal: LegalTranslations;
+  settings: SettingsTranslations;
+  common: {
+    loading: string;
   };
   portfolioImpact: {
     label: string;
@@ -311,6 +323,9 @@ const ru: Translations = {
   asset: {
     back: "Назад",
   },
+  legal: LEGAL_BY_LOCALE.ru,
+  settings: SETTINGS_BY_LOCALE.ru,
+  common: COMMON_BY_LOCALE.ru,
   portfolioImpact: {
     label: "Влияние на портфель",
     title: "Пульс рынка за 24ч для ваших позиций",
@@ -504,6 +519,9 @@ const en: Translations = {
   asset: {
     back: "Back",
   },
+  legal: LEGAL_BY_LOCALE.en,
+  settings: SETTINGS_BY_LOCALE.en,
+  common: COMMON_BY_LOCALE.en,
   portfolioImpact: {
     label: "Daily Portfolio Impact",
     title: "24h market pulse for your holdings",
@@ -699,6 +717,9 @@ const de: Translations = {
   asset: {
     back: "Zurück",
   },
+  legal: LEGAL_BY_LOCALE.de,
+  settings: SETTINGS_BY_LOCALE.de,
+  common: COMMON_BY_LOCALE.de,
   portfolioImpact: {
     label: "Portfolio-Auswirkung",
     title: "24h-Marktpuls für Ihre Positionen",
