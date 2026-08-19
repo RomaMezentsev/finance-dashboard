@@ -29,7 +29,7 @@ export function StockCard({ stock, onRemove, index }: StockCardProps) {
   return (
     <Link
       href={assetHref}
-      className="group animate-fade-up flex h-full min-h-[220px] cursor-pointer flex-col rounded-3xl border border-card-border bg-card/80 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:shadow-[0_20px_60px_-30px_var(--glow)]"
+      className="group animate-fade-up flex h-full min-h-[260px] flex-1 cursor-pointer flex-col rounded-3xl border border-card-border bg-card/80 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:shadow-[0_20px_60px_-30px_var(--glow)] max-sm:h-[260px]"
       style={{ animationDelay: `${index * 70}ms` }}
     >
       <div className="flex min-w-0 items-start justify-between gap-3">

@@ -84,9 +84,11 @@ export function Watchlist() {
         {t.portfolio.yourHoldings}
       </h2>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-col space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 lg:grid-cols-3">
         {stocks.map((stock, index) => (
-          <StockCard key={stock.id} stock={stock} index={index} onRemove={removeStock} />
+          <div key={stock.id} className="flex flex-1 flex-col">
+            <StockCard stock={stock} index={index} onRemove={removeStock} />
+          </div>
         ))}
       </div>
     </section>
